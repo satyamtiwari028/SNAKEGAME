@@ -34,10 +34,10 @@ function init() {
 								console.log("GAME OVER")}}}
 			
 		snake.createSnake();
-		function keyPressed(e){if(e.key=="ArrowRight"){snake.face="right"}
-					else if(e.key=="ArrowLeft"){snake.face="left"}
-					else if(e.key=="ArrowUp"){snake.face="up"}
-					else if(e.key=="ArrowDown"){snake.face="down"}
+		function keyPressed(e){if(e.key=="ArrowRight" && snake.face!="left"){snake.face="right"}
+					else if(e.key=="ArrowLeft" && snake.face!="right"){snake.face="left"}
+					else if(e.key=="ArrowUp" && snake.face!="down"){snake.face="up"}
+					else if(e.key=="ArrowDown" && snake.face!="up"){snake.face="down"}
 					console.log(snake.face)}
 		
 		document.addEventListener("keydown", keyPressed)}
